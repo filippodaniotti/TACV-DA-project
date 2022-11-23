@@ -1,0 +1,92 @@
+\documentclass[conference]{IEEEtran}
+\IEEEoverridecommandlockouts
+% The preceding line is only needed to identify funding in the first footnote. If that is unneeded, please comment it out.
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts,bm}
+\usepackage[ruled]{algorithm2e}
+\usepackage[hidelinks]{hyperref}
+\usepackage[noabbrev,capitalize]{cleveref}
+\usepackage{array, booktabs, makecell}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{caption}
+\usepackage{subcaption}
+\newcommand\norm[1]{\left\lVert#1\right\rVert}
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+\newcommand{\red}[1]{\textcolor{red}{#1}}
+\newcommand{\blue}[1]{\textcolor{blue}{#1}}
+\makeatletter
+\newcommand{\removelatexerror}{\let\@latex@error\@gobble}
+\makeatother
+
+
+\usepackage[a-1b]{pdfx}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    filecolor=black,      
+    citecolor=black,
+    urlcolor=blue,
+    pdfpagemode=FullScreen,
+    }
+
+\begin{document}
+
+\title{Unsupervised Domain Adaptation:\\State-Of-The-Art review and analysis}
+
+\author{
+    \IEEEauthorblockN{Roberto Mazzaro}
+    \IEEEauthorblockA{
+        % \textit{DISI, University of Trento} \\
+        % roberto.mazzaro@studenti.unitn.it\\
+        mat}
+    \and
+    \IEEEauthorblockN{Filippo Daniotti}
+    \IEEEauthorblockA{
+        % \textit{DISI, University of Trento} \\
+        % filippo.daniotti@studenti.unitn.it\\
+        232087}
+    \and
+    \IEEEauthorblockN{Michele Yin}
+    \IEEEauthorblockA{
+        % \textit{DISI, University of Trento} \\
+        % michele.yin@studenti.unitn.it\\
+        229359}
+    \and
+    \IEEEauthorblockN{Giovanni Ambrosi}
+    \IEEEauthorblockA{
+        % \textit{DISI, University of Trento} \\
+        % giovanni.ambrosi@studenti.unitn.it\\
+        232252}
+    \and
+    \IEEEauthorblockN{Andrea Bonora}
+    \IEEEauthorblockA{
+        % \textit{DISI, University of Trento} \\
+        % andrea.bonora@studenti.unitn.it\\
+        mat}
+}
+
+
+\maketitle
+
+% add page number
+\thispagestyle{plain}
+\pagestyle{plain}
+
+\begin{abstract}
+
+\end{abstract}
+
+\begin{IEEEkeywords}
+deep learning, domain adaptation, unsupervised domain adaptation, computer vision
+\end{IEEEkeywords}
+
+\input{sections/discrepancy.tex}
+
+% \bibliography{bibliography.bib}{}
+% \bibliographystyle{IEEEtran}
+
+\end{document}

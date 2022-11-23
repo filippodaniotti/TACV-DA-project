@@ -1,0 +1,24 @@
+\section{Discrepancy-based methods}
+They key idea is that the distributions of source and target domains are different. However they are shifted by some small amount. In theory it is possible to align the distributions to reduce domain bias minimizing the distance in source and target features.
+
+Starting from early ideas, some simple ones are like MMD or CORAL loss, where they try to align the distributions of source and target using first or second order moments respectively.
+However they don’t look at higher order moments, which may be theoretically wrong, because the distributions may have same first or second order moments, but not third.
+Some works propose a kernel to map the features to a higher order Hilbert space before confronting them using a distance metric, this way it is possible with one metric measure more than one moment.
+
+It is also very simple to implement, because most formulation can be represented by adding a domain adaptation term to the classification loss.
+
+Other works propose to add domain alignment layers, like MK-MMD. They are proven to be more effective because the network has more layers to learn a transformation that aligns both source and target features
+
+There is also one big problem. It may be the case that target features are unevenly distributed on a decision boundary for source features. This of course hinders performances, leading to an overall bad domain adaptation with lots of misidentified target classes.
+The idea to solve this is to add a clustering term to the loss. The idea is to promote source features compactness and distance to other classes, which will lead to a similar representation in the target space. Some work use similar ideas based on confidence, entropy or others but the key concept is the same.
+
+Also pseudolabelling can be very effective, if target and source domains have a small domain shift, like shown in DSAN. They do a pseudolabelling and then align pseudolabels of target and ground truth on source. However, pseudolabelling may not effective if source and target distributions have a high domain shift.
+
+
+Lastly, there is one key wrong assumption.
+
+Deep networks can very well be used in many field, and extract features that are better than human generated features, like SIFT,SURF etc. 
+
+However it has been proven that the network has to eventually transition from general features to domain specific features. 
+
+There is some work on learning two different backbones for source and target domains, but that is something my colleagues will present to you.
