@@ -1,7 +1,0 @@
-% author: Filippo
-\section{Self-Training based methods}
-In self-training we aim to discover pseudo-labels for the target distribution. We first train on source data only and used the train model to classify unlabelled samples, picking the highest-confidence label as pseudo-label.
-
-One limitation of self-training is that performances drop as domain divergence increases. Zhang et al.\cite{Deng2021} proposed to mitigate this problem by constructing intermediate datasets and models, starting from source only and progressively increasing the percentage of unlabelled data. The self-training procedure is run iteratively until a dataset with target only examples and possibly accurate pseudo-labels is constructed.
-
-Qiu et al.\cite{Qiu2021} tried to combine self-training with meta-learning, which refers to the idea of performing training operations on some meta-aspects of the model (e.g. training to learn the best hyperparameters). In particular, they use the MAML algorithm to learn better and better initialization parameters for the network during the iterative self-training procedure, until convergence. 

@@ -1,24 +1,22 @@
+% author: Michele
 \section{Discrepancy-based methods}
-They key idea is that the distributions of source and target domains are different. However they are shifted by some small amount. In theory it is possible to align the distributions to reduce domain bias minimizing the distance in source and target features.
+In discrepancy-based methods we assume that the distributions of source and target domains are shifted by a reasonably small amount. In theory, it should be possible to align the distributions to reduce domain bias, therefore minimizing the distance in source and target features.
 
-Starting from early ideas, some simple ones are like MMD or CORAL loss, where they try to align the distributions of source and target using first or second order moments respectively.
-However they don’t look at higher order moments, which may be theoretically wrong, because the distributions may have same first or second order moments, but not third.
-Some works propose a kernel to map the features to a higher order Hilbert space before confronting them using a distance metric, this way it is possible with one metric measure more than one moment.
+To align source and target domains, a correct distance metric has to be chosen. Some distribution metrics  distance may be used (e.g. Kullback-Leibler); minimizing this metric while retaining the network capability to extract good features is key.
 
-It is also very simple to implement, because most formulation can be represented by adding a domain adaptation term to the classification loss.
+Some of the earliest ideas are MMD \cite[Tzeng et al.]{mmd} and CORAL \cite[Sun et al.]{coral} loss, that aim to align the distributions of source and target using first or second order moments respectively.
+However, because they do not consider higher order moments, theoretically the approach might be insufficient. The distributions may have same first or second order moments, but not third or higher order statistics. This may be addressed by either explicitly considering higher order moments \cite[Zellinger et al.]{Zellinger_2019}, \cite[Chen et al.]{hmmd}, or by  proposing a kernel \cite[Wang et al]{kernel} to map the features to a higher order Hilbert space before comparing them using a distance metric; this way it is possible to measure more than one moment using one metric.
 
-Other works propose to add domain alignment layers, like MK-MMD. They are proven to be more effective because the network has more layers to learn a transformation that aligns both source and target features
+Typically, those formulations are very simple to implement and can be generalized by appending the distance based loss to the objective, with a regulation factor $\lambda$:
+$ L = L_{clf}(Y_s,\hat X_s) + \lambda L_{distance}(X_s,X_t)$.
 
-There is also one big problem. It may be the case that target features are unevenly distributed on a decision boundary for source features. This of course hinders performances, leading to an overall bad domain adaptation with lots of misidentified target classes.
-The idea to solve this is to add a clustering term to the loss. The idea is to promote source features compactness and distance to other classes, which will lead to a similar representation in the target space. Some work use similar ideas based on confidence, entropy or others but the key concept is the same.
+Other works propose to add domain alignment layers, like DAN \cite[Long et al]{DAN}. They are proven to be more effective because the network has more layers, thus it can learn a transformation that aligns both source and target features.
 
-Also pseudolabelling can be very effective, if target and source domains have a small domain shift, like shown in DSAN. They do a pseudolabelling and then align pseudolabels of target and ground truth on source. However, pseudolabelling may not effective if source and target distributions have a high domain shift.
+One issue with discrepancy-based approaches is that the distribution of source and target classes may be different. Therefore, applying a distance based metric may not lead to an effective domain adaptation. Some metrics are specifically designed to address this imbalance, as in \cite[Balaji et al.]{homm}.
+
+Also, it may be the case that target features are unevenly distributed on a decision boundary for source features. This  hinders performances, leading to extremely uneffective domain adaptation results. To overcome this issue, it is possible to add a clustering term to the loss. The idea is to promote source features compactness and distance to other classes, which will lead to a similar representation in the target space. Some works use similar ideas based on confidence, entropy or others but the key concept is the same \cite[Kang et al.]{CAN}, \cite[Chen et al]{joint}.
+%% $ L = L_{cls}(Y_s,\hat X_s) + \lambda_1 L_{dst}(X_s,X_t) + \lambda_2 L_{cluster}(X_s) $  
+Also, pseudolabelling can be very effective if target and source domains have a small domain shift, like shown in DSAN \cite[Zhu et al.]{Zhu_2021}. Here, the authors perform pseudolabelling of target features and then align pseudolabels of target and ground truth on source for each class label. However, effective pseudolabelling may not improve results if source and target distributions have a high domain shift.
 
 
-Lastly, there is one key wrong assumption.
-
-Deep networks can very well be used in many field, and extract features that are better than human generated features, like SIFT,SURF etc. 
-
-However it has been proven that the network has to eventually transition from general features to domain specific features. 
-
-There is some work on learning two different backbones for source and target domains, but that is something my colleagues will present to you.
+Lastly, while deep networks can be used effectively in many fields, as they extract features that are better than human generated features, like SIFT \cite[Lowe et al.]{sift} or SURF \cite[Bay et al.]{surf} etc. However, it has been proven that the network has to eventually transition from general features to domain specific features \cite[Long et al.]{mkmmd}. There is some work on learning two different backbones for source and target domains \cite[Rozantsev et al.]{residual} based on finding the alignment from source to target.

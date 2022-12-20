@@ -1,0 +1,5 @@
+% author: Filippo
+\paragraph{Semi-Supervised learning methods}
+Some have explored the idea of using SSL methods in UDA: this is achieved by reframing SSL as a special case of UDA. In \cite[Zhang et al.]{Zhang2021} they pointed that both UDA and SSL aims to use unlabelled (target) data as data-dependent regularizer to improve model performance over a labelled (source) baseline. 
+
+When it comes to reframing: in a SSL scenario labelled data are typically insufficient to represent the overall distribution \(P_{\textrm{ssl}}\), i.e. labelled data only represent a sub-domain of that distribution. Now, consider the sub-domain with the smallest support set for the distribution \(P_{\textrm{small}}\) where all classes are represented; hence, we can consider \(P_{\textrm{small}}\) and \(P_{\textrm{ssl}}\) as source and target distribution in a UDA setting, thereby allowing to run SSL pipelines for UDA tasks. They tried several SOTA SSL methods and achieved notable results.

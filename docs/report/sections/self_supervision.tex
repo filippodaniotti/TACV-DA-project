@@ -1,0 +1,18 @@
+% author: Filippo
+\paragraph{Self-Supervised methods}
+In self-supervised learning we artificially create labelled data out of unlabelled data, which we then use to train a model on auxiliary tasks (\emph{pretexts}), under the assumption that the latent representation learned from pretexts will effectively translate to downstream real applications.
+
+This idea has been explored in UDA in \cite[Sun et al.]{Sun2019}. They proposed a multi-head architecture, with a shared feature extractor, one head for the specific task and multiple heads for the pretexts. The task specific head should be trained on source data only, while the remaining heads should be trained on both source and target. They picked three pretexts:
+\begin{enumerate*}[label=(\roman*)]
+    \item rotation classification,
+    \item horizontal flip detection,
+    \item patch location detection.
+\end{enumerate*}
+The idea is that these pretexts should force the model to learn more domain-invariant structural features, hence providing the model with improved accuracy on the target domain.
+
+This idea is architecture-independent, thus easily adaptable to other UDA methods. For instance, \cite[Xie et al.]{Xie2020} revisited the CycleGAN \cite{Hoffman2017} paradigm with self-supervision. In particular, they enriched the architecture with a siamese network \(S\) trained with a self-supervised patch detection pretext. The \(S\) network takes two patches and has 
+\begin{enumerate*}[label=(\roman*)]
+    \item a content registration branch, accounting for conteng consistency in translation, 
+    \item and a domain classification branch, which determines whether the two patches are both from source, both translated or mixed.
+\end{enumerate*}
+The idea is to locally disentangle domain information and image content.

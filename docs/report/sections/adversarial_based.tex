@@ -1,0 +1,35 @@
+\section{Adversarial-based methods}
+    The fundamental idea of this class of methods can be found in the paper of \cite[Ganin at al.]{Ganin2015}, where a domain discriminator is added. The classifier is trained to minimize the classification loss and the domain predictor to minimize the domain loss, while the feature extractor 
+    is trained to minimize the classification loss but maximize the domain loss. 
+    This adversarial game between the discriminator and the feature extractor is possible thank to the Gradient Reversal Layer and results in extracted features 
+    that are shared across both domains.
+    
+    In the following years many different architectures that improve this idea have been presented. 
+    In \cite[Tzeng at al.]{Tzeng2017} a discriminative mapping of the target images to the source feature space is learned by fooling the domain discriminator;
+    moreover, they introduce a GAN loss.\
+    In \cite[Long at al.]{Long2017} they exploit both the domain specific feature representation and the discriminative information conveyed in the classifier prediction 
+    to condition the discriminator through a multilinear mapping.
+    
+    Some works instead of introducing a discriminator introduce one or more GANs.
+    In \cite[Bousmalis at al.]{Bousmalis2016} they use a GAN that works at pixel level and tries to transform source images into target ones to train directly the task specific classifier,
+    while in \cite[Sankaranarayanan at al.]{Sankaranarayanan2017} the generated images enter only in the discriminator and its feedback is used to train the feature extractor.
+    Last trend in GAN based methods is to introduce cycles as is done by \cite[Hoffman at al.]{Hoffman2017}, where source images are transformed into target ones and then back to source;
+    moreover, many different losses are exploited to better adapt images. 
+    In \cite[Russo at al.]{Russo2017} they apply cycle mechanism for both for source and target images and source-like target images are annotated with pseudo-labels 
+    and used to train the classifier.
+    
+    Recently, the research is concentrated in finding techniques that can be applied to already existing UDA techniques to improve them. 
+    In \cite[Wang at al.]{Wang2020} they propose to use a fine-grained discriminator that also includes the class information to obtain a better class alignment.\
+    In \cite[Chen at al.]{Chen2022} they remove the discriminator and the Nuclear-norm Wasserstein Discrepancy module  is introduced; this module is attached to the classifier and 
+    can be used as a discriminator. The idea is that the self-correlation matrix produced by the classifier for the source images has high values only in the diagonal 
+    due to the supervised training, while for the target images the self-correlation matrix has also high values in the off-diagonal elements. This approach should encourage intra and inter-class correlation.\
+    In \cite[Wang at al.]{Wang2020} they use conditional entropy to reweight samples in order to give an higher weight to poorly aligned ones;  triplet loss is also used.\
+    In \cite[Chen at al.]{Chen2020} they combine self-training  to learn discriminative features, and adversarial training to align features distributions.\
+    In \cite[Wei at al.]{Wei2021} they propose a meta-learning scheme where one task is the meta-train task and while the other is used for validation. In the following epoch they 
+    are used in the other way around; this way, both tasks are optimized in a coordinated way.\ 
+    In \cite[Gao at al.]{Gao2021} they constrained gradients of two domains to have similar distributions and to do that pseudo labels are computed to calculate the target loss;
+    moreover jacobian regularization is applied.
+    In \cite[Jin at al.]{Jin2021} they relabel well-aligned target samples to source domain to make distributions more separable.
+    In \cite[Rangwani at al.]{Rangwani2022} they discover that reaching a  smoother minimum of the task loss leads to a better generalization, while this is not true for the adversarial loss;
+    they also propose SDAT (Smooth Domain Adversarial Training),  which is able to reach a smoother minimum with few additional gradient computation steps. The idea is that the Hessian
+    matrix should have a low value for the maximum eigenvalue if the reached minimum is smooth.

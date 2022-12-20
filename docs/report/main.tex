@@ -43,7 +43,7 @@
     \IEEEauthorblockA{
         % \textit{DISI, University of Trento} \\
         % roberto.mazzaro@studenti.unitn.it\\
-        mat}
+        229301}
     \and
     \IEEEauthorblockN{Filippo Daniotti}
     \IEEEauthorblockA{
@@ -67,7 +67,7 @@
     \IEEEauthorblockA{
         % \textit{DISI, University of Trento} \\
         % andrea.bonora@studenti.unitn.it\\
-        mat}
+        232222}
 }
 
 
@@ -78,16 +78,21 @@
 \pagestyle{plain}
 
 \begin{abstract}
-
+Deep neural networks have greatly improved the performances of shallow models in many fields. Currently, we are heading to increasingly larger and deeper networks, which require similarly large datasets. However, while deep models have good performances on the dataset they are trained on, they also perform significantly worse on a different dataset. In \emph{domain adaptation} we aim to mitigate this issue. Here we present a survey of some techniques that have been researched in the specific field of \emph{unsupervised domain adaptation}.
 \end{abstract}
 
-\begin{IEEEkeywords}
-deep learning, domain adaptation, unsupervised domain adaptation, computer vision
-\end{IEEEkeywords}
-
+\input{sections/introduction.tex}
 \input{sections/discrepancy.tex}
-\input{sections/ssl-uda.tex}
-\input{sections/self-supervision.tex}
+\input{sections/adversarial_based.tex}
+\input{sections/optimal_transport.tex}
+\section{Other methods}
+\input{sections/incremental_methods.tex}
+\input{sections/information_based.tex}
+\input{sections/ssl_uda.tex}
+\input{sections/self_training.tex}
+\input{sections/self_supervision.tex}
+\input{sections/other_methods.tex}
+
 
 \bibliography{bibliography.bib}{}
 \bibliographystyle{IEEEtran}

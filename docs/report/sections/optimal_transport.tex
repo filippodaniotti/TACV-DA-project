@@ -1,0 +1,18 @@
+\section{Optimal Transport}
+Optimal transport is the general problem of moving one distribution of mass to another as efficiently as possible. Let $X$ and $Y$ be two sets of data  having the same number of data samples $N$. In a matching problem each data point $x$ in $X$ must be matched with exactly one data point $y$ in $Y$. The cost  for this match to occur is $c(x,y)$. These potential matches are $N$. The average of $c$ across all data points define the cost of a specific match (the \emph{transport}). The discrete OT problem is to find the transport with the lower the average cost.
+There are many ways to define a distance between $P$ and $Q$, such as Total Variation, Hellinger, $L_2$, $\mathcal{X}^2$ and the Wasserstein distance (Eq.\ref{eq:wass_dist}), which is the most used in recent works.
+\begin{equation}
+\label{eq:wass_dist}
+    W_p(P,Q)= \bigg( \inf_{J\in\Im(P,Q)}\int||x-y||^pdJ(x,y) \bigg)^{1/p}
+\end{equation}
+One on the main work based on OT is \cite[Nguyen et al.]{nguyen2021}, which uses a teacher-student architecture. The authors assume to have a well-qualified classifier (teacher) that gives accurate prediction on the data in the source domain. The goal is to learn a classifier (student) for the target domain by minimizing the proposed objective function composed of the loss of the teacher and a \emph{OT-based} term computed using the Wasserstein distance.
+%\begin{equation}
+%\min_{h_S,h_T,G}\{\mathcal{L}^S+\alpha\mathcal{R}^{WS}\},
+%\end{equation}
+%\begin{equation}
+%\mathcal{L}^S = \dfrac{1}{N_S}\sum_{i=1}^{N_S}\mathcal{l} (h_S(G(x_i^S)),y_i^S),
+%\end{equation}
+%\begin{equation}
+%R^{WS}=\mathcal{W}_d(P_{T,h_T},P_{S,h_S}),
+%\end{equation}
+%where

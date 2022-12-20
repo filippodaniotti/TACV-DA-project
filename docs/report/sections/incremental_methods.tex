@@ -1,0 +1,6 @@
+%author: Andrea
+% \section{Incremental methods}
+\paragraph{Incremental methods}
+The concept of incremental methods starts from self-labeling approaches, which are specific approaches in which a supervised model is trained from the labeled data and then used to automatically assign a  pseudo-label to each unlabeled sample. The concept of self-labeling has been investigated by \cite[Gallego et al.]{Gallego2020}, which took the current DANN approach \cite{Ganin2015} and provided novel ways to enhance its capacity for incremental adaptation to the target domain. The main assumption of this work is that we can add the subset of target domain samples on which classifier is more confident about to the source-labeled domain while assuming the prediction as ground-truth label.
+Then, using the new training set, we may retrain the DANN network to fine-tune its weights. This process is repeated iteratively, moving the labeled samples with greater confidence from the target domain to the source domain after each iteration. We stop when there are no more samples left in the target domain to move.
+The main idea is that by including target domain information in the source domain, the DANN learns new domain-invariant features that better suit the eventual classification task.
