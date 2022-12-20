@@ -6,7 +6,7 @@ The goal of this project was to explore the topic of Domain Adaptation, with an 
 ## Outline
 | <a href="docs/presentations/TACV-I-milestone.pdf" target="_blank"><b>First presentation</b></a> | <a href="docs/report/report.pdf" target="_blank"><b>Report</b></a> | <a href="https://fedeizzo.github.io/ParticleSwarmOptimization-OpenMPI/presentation.pdf" target="_blank"><b>Final presentation</b></a> |
 |--------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------|
-| [![](docs/thumbnails/first%20presentation.png)](docs/presentations/TACV-I-milestone.pdf)              | [![](docs/thumbnails/report.png)](docs/report/report.pdf)         | [![](assets/presentation-thumbnail.png)](https://fedeizzo.github.io/ParticleSwarmOptimization-OpenMPI/presentation.pdf)        |
+| [![](docs/images/thumbnails/first%20presentation.png)](docs/presentations/TACV-I-milestone.pdf)              | [![](docs/images/thumbnails/report.png)](docs/report/report.pdf)         | [![](assets/presentation-thumbnail.png)](https://fedeizzo.github.io/ParticleSwarmOptimization-OpenMPI/presentation.pdf)        |
 
 ## First presentation
 The first presentation can be found [here](docs/presentations/TACV-I-milestone.pdf)
@@ -20,6 +20,13 @@ The notebooks used for the test and analysis are [here]()
 The main ideas are two:
 - Try to **combine and merge** different approached, starting from **DANN** and building of top of that. 
 - In depth analysis and ablation study on **self-training**, because the technique is very unique and we wanted to shed light on its mechanism. Also an official implementation was not available. 
+
+We also created a pipeline of standardized operations for testing, in order to speed up evaluation 
+
+
+| [![](docs/images/output.gif)](docs/images/output.gif)              | [![](docs/images/t-SNE.png)](docs/images/t-SNE.png)         | [![](docs/images/classification%20report.png)](docs/images/classification%20report.png)        |
+|--------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------|
+|[![](docs/images/confusion%20matrixes.png)](docs/images/confusion%20matrixes.png)              | [![](docs/images/source_errors.png)](docs/images/source_errors.png)         | [![](docs/images/target_errors.png)](docs/images/target_errors.png)        |
 ## Second presentation
 The second presentation can be found here [here]()
 In here we discuss the results of both our research in combination of different techniques and our ablation study.
