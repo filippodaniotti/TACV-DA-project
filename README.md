@@ -4,11 +4,13 @@ Course: Trends and Application of Computer Vision
 The goal of this project was to explore the topic of Domain Adaptation, with an initial anaylis of the SOTA and then hands-on trying to improve DANN and ablation studies of self training
 
 ## Outline
-|<div style="width:200px"></div>| <div style="width:200px"></div>| <div style="width:200px"></div>|
+
+| <a href="docs/presentations/TACV-I-milestone.pdf" target="_blank"><b>First presentation</b></a> | <a href="docs/report/report.pdf" target="_blank"><b>Report</b></a> | <a href="docs/presentations/TACV-final-presentation.pdf" target="_blank"><b>Final presentation</b></a> |
 |--------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------|
 |
-| <a href="docs/presentations/TACV-I-milestone.pdf" target="_blank"><b>First presentation</b></a> | <a href="docs/report/report.pdf" target="_blank"><b>Report</b></a> | <a href="docs/presentations/TACV-final-presentation.pdf" target="_blank"><b>Final presentation</b></a> |
 | [![](docs/images/thumbnails/first%20presentation.png)](docs/presentations/TACV-I-milestone.pdf)              | [![](docs/images/thumbnails/report.png)](docs/report/report.pdf)         | [![](assets/presentation-thumbnail.png)](docs/presentations/TACV-final-presentation)        |
+
+
 
 ## First presentation
 The first presentation can be found [here](docs/presentations/TACV-I-milestone.pdf)
@@ -36,6 +38,6 @@ In here we discuss the results of both our research in combination of different 
 
 In the end a very brief summary is:
 - Merging DA techniques may not always result in the expected perfomances of the single approaches
-- Overlaying DA techniques may result in overly complicated architectures.
+- Overlaying DA techniques may result in overly complicated architectures
 - More often than not DA techniques need dataset and model specific tuning, making transferability not trivial
 - Not all DA techniques may be applied to every dataset. In particular a preemptive dataset analysis to choose the best suited DA technique for the dataset can increase the results significantly
