@@ -7,7 +7,7 @@ The goal of this project was to explore the topic of Domain Adaptation, with an 
 
 | <a href="static/assets/presentations/TACV-I-milestone.pdf" target="_blank"><b>First presentation</b></a> | <a href="static/assets/report/report.pdf" target="_blank"><b>Report</b></a> | <a href="static/assets/presentations/TACV-final-presentation.pdf" target="_blank"><b>Final presentation</b></a> |
 |--------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------|
-| [![](static/assets/images/thumbnails/first%20presentation.png)](docs/presentations/TACV-I-milestone.pdf)              | [![](static/assets/images/thumbnails/report.png)](docs/report/report.pdf)         | [![](assets/presentation-thumbnail.png)](docs/presentations/TACV-final-presentation)        |
+| [![](static/assets/images/thumbnails/first%20presentation.png)](docs/presentations/TACV-I-milestone.pdf)              | [![](static/assets/images/thumbnails/report.png)](docs/report/report.pdf)         | [![](static/assets/images/thumbnails/first%20presentation.png)](docs/presentations/TACV-final-presentation.pdf)        |
 
 
 
