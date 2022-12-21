@@ -1,6 +1,4 @@
 # Domain Adaptation 
-Course: Trends and Application of Computer Vision
-
 The goal of this project was to explore the topic of Domain Adaptation, with an initial anaylis of the SOTA and then hands-on trying to improve DANN and ablation studies of self training
 
 ## Outline
@@ -44,3 +42,93 @@ In the end a very brief summary is:
 - Overlaying DA techniques may result in overly complicated architectures
 - More often than not DA techniques need dataset and model specific tuning, making transferability not trivial
 - Not all DA techniques may be applied to every dataset. In particular a preemptive dataset analysis to choose the best suited DA technique for the dataset can increase the results significantly
+
+## Implemented papers
+
+**Unsupervised Domain Adaptation by Backpropagation**
+
+Ganin et al. 2014
+
+https://arxiv.org/abs/1409.7495
+
+Find it in [adversarial_architectures.ipynb](src/notebooks/adversarial_architectures.ipynb)
+
+---
+
+**Deep Domain Confusion: Maximizing for Domain Invariance**
+
+Tzeng et al. 2014 
+
+https://arxiv.org/abs/1412.3474
+
+Find it in [adversarial_architectures.ipynb](src/notebooks/adversarial_architectures.ipynb)
+
+---
+
+**Deep CORAL: Correlation Alignment for Deep Domain Adaptation**
+
+Sun et al. 2016
+
+https://arxiv.org/abs/1607.01719
+
+Find it in [adversarial_architectures.ipynb](src/notebooks/adversarial_architectures.ipynb)
+
+---
+
+**Reusing the Task-specific Classifier as a Discriminator: Discriminator-free Adversarial Domain Adaptation**
+
+Chen et al. 2022
+
+https://ieeexplore.ieee.org/document/9879990
+
+Find it in [adversarial_architectures.ipynb](src/notebooks/adversarial_architectures.ipynb)
+
+---
+
+**A Closer Look at Smoothness in Domain Adversarial Training**
+
+Rangwani et al. 2022
+
+https://arxiv.org/abs/2206.08213
+
+Find it in [adversarial_architectures.ipynb](src/notebooks/adversarial_architectures.ipynb)
+
+---
+
+**Gradient Distribution Alignment Certificates Better Adversarial Domain Adaptation**
+
+Gao et al. 2022
+
+https://ieeexplore.ieee.org/document/9710736
+
+Find it in [adversarial_architectures.ipynb](src/notebooks/adversarial_architectures.ipynb)
+
+---
+
+**Re-energizing Domain Discriminator with Sample Relabeling for Adversarial Domain Adaptation**
+
+Jin et al. 2021
+
+https://arxiv.org/abs/2103.11661
+
+Find it in [adversarial_architectures.ipynb](src/notebooks/adversarial_architectures.ipynb)
+
+---
+
+**Incremental Unsupervised Domain-Adversarial Training of Neural Networks**
+
+Gallego et al. 2021
+
+https://ieeexplore.ieee.org/document/9216604
+
+Find it in [adversarial_architectures.ipynb](src/notebooks/adversarial_architectures.ipynb)
+
+---
+
+**Gradual Domain Adaptation via Self-Training of Auxiliary Models**
+
+Zhang et al. 2021
+
+https://arxiv.org/abs/2106.09890
+
+Find it in [aux_self_train.ipynb](src/notebooks/aux_self_train.ipynb.ipynb)
