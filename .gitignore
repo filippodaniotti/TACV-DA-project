@@ -48,3 +48,5 @@ main.pdf
 _minted*
 *.pyg
 
+#MacOS
+*.DS_Store
