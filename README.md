@@ -21,12 +21,12 @@ This report aims to provide a synthetic overview of what we have found from an i
 ## Notebooks
 The notebooks used for the test and analysis are [here](src/notebooks/)
 The main ideas are two:
-- [adversarial_architectures.ipynb](src/notebooks/aux_self_train.ipynb): try to **combine and merge** different approached, starting from **DANN** and building of top of that. 
-- [aux_self_train.ipynb](src/notebooks/): in depth analysis and ablation study on **self-training**, because the technique is very unique and we wanted to shed light on its mechanism. Also an official implementation was not available. 
+- [adversarial_architectures.ipynb](src/notebooks/adversarial_architectures.ipynb): try to **combine and merge** different approached, starting from **DANN** and building of top of that. 
+- [aux_self_train.ipynb](src/notebooks/aux_self_train.ipynb): in depth analysis and ablation study on **self-training**, because the technique is very unique and we wanted to shed light on its mechanism. Also an official implementation was not available. 
 
-| [aux_self_train.ipynb](src/notebooks/) | [aux_self_train.ipynb](src/notebooks/aux_self_train.ipynb) |
-| ------------------------------- | -------------------- |
- () | <a target="_blank" href="https://colab.research.google.com/github/filippodaniotti/TACV-DA-project/blob/master/src/notebooks/aux_self_train.ipynb">  <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/> |
+| [adversarial_architectures.ipynb](src/notebooks/adversarial_architectures.ipynb) | [aux_self_train.ipynb](src/notebooks/aux_self_train.ipynb) |
+| -------------------------------------------------------------------------------- | ---------------------------------------------------------- |
+ <a target="_blank" href="https://colab.research.google.com/github/filippodaniotti/TACV-DA-project/blob/master/src/notebooks/adversarial_architectures.ipynb">  <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/> | <a target="_blank" href="https://colab.research.google.com/github/filippodaniotti/TACV-DA-project/blob/master/src/notebooks/aux_self_train.ipynb">  <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/> |
 
 We also created a pipeline of standardized operations for testing, in order to speed up evaluation 
 
